@@ -28,7 +28,7 @@ public class ReservationController {
     public ResponseEntity<Reservation> getReservationById(
             @PathVariable("id") long id
     ) {
-        log.info("Get.../id\ncalled getReservationById()");
+        log.info("Get.../id called getReservationById()");
         try {
             return ResponseEntity.status(HttpStatus.OK)
                     .body(reservationService.getReservationById(id));
@@ -42,9 +42,9 @@ public class ReservationController {
 
     @GetMapping()
     public ResponseEntity<List<Reservation>> getAllReservations() {
-        log.info("Get.../\ncalled getAllReservations()");
+        log.info("Get.../ called getAllReservations()");
         return ResponseEntity.ok()
-                .body(reservationService.getAllReservations());
+                .body(reservationService.findAllReservations());
     }
 
     @PostMapping
